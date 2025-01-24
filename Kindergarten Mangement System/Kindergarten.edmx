@@ -1,0 +1,1124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Bonds">
+          <Key>
+            <PropertyRef Name="Student_id" />
+          </Key>
+          <Property Name="Student_id" Type="int" Nullable="false" />
+          <Property Name="Student_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="bond_photo" Type="image" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Buses">
+          <Key>
+            <PropertyRef Name="b_id" />
+          </Key>
+          <Property Name="b_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="b_type" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="b_plat_number" Type="int" Nullable="false" />
+          <Property Name="b_ownership_paper" Type="image" Nullable="false" />
+          <Property Name="employee_id" Type="int" Nullable="false" />
+          <Property Name="gender_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Classes_schedule">
+          <Key>
+            <PropertyRef Name="c_id" />
+          </Key>
+          <Property Name="c_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="c_name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="c_number" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="e_id" />
+          </Key>
+          <Property Name="e_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="job_id" Type="int" Nullable="false" />
+          <Property Name="e_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="gender_id" Type="int" Nullable="false" />
+          <Property Name="e_age" Type="int" Nullable="false" />
+          <Property Name="e_personal_card" Type="image" Nullable="false" />
+          <Property Name="e_ceirtificate" Type="image" Nullable="false" />
+          <Property Name="e_address" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="e_phone" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="e_salary" Type="numeric" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="driving_license" Type="image" />
+        </EntityType>
+        <EntityType Name="Genders">
+          <Key>
+            <PropertyRef Name="g_id" />
+          </Key>
+          <Property Name="g_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="g_name" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Guadians">
+          <Key>
+            <PropertyRef Name="guadian_id" />
+          </Key>
+          <Property Name="guadian_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="guadian_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="gender_id" Type="int" Nullable="false" />
+          <Property Name="age" Type="int" Nullable="false" />
+          <Property Name="personal_card" Type="image" Nullable="false" />
+          <Property Name="phone" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="guadian_address" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Jobs">
+          <Key>
+            <PropertyRef Name="job_id" />
+          </Key>
+          <Property Name="job_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="job_name" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Levels">
+          <Key>
+            <PropertyRef Name="l_id" />
+          </Key>
+          <Property Name="l_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="l_name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="l_number" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Passwords">
+          <Key>
+            <PropertyRef Name="P_id" />
+          </Key>
+          <Property Name="P_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="e_id" Type="int" Nullable="false" />
+          <Property Name="pass" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="forget" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Semester_works">
+          <Key>
+            <PropertyRef Name="sw_id" />
+          </Key>
+          <Property Name="sw_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="student_id" Type="int" Nullable="false" />
+          <Property Name="level_id" Type="int" Nullable="false" />
+          <Property Name="subject_id" Type="int" Nullable="false" />
+          <Property Name="test1" Type="float" Nullable="false" />
+          <Property Name="test2" Type="float" Nullable="false" />
+          <Property Name="final" Type="float" Nullable="false" />
+          <Property Name="total" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Stores">
+          <Key>
+            <PropertyRef Name="store_id" />
+          </Key>
+          <Property Name="store_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="store_name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="employee_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Students">
+          <Key>
+            <PropertyRef Name="student_id" />
+          </Key>
+          <Property Name="student_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="student_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="gender_id" Type="int" Nullable="false" />
+          <Property Name="student_birth" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="student_photo" Type="image" Nullable="false" />
+          <Property Name="student_birth_certificaion" Type="image" Nullable="false" />
+          <Property Name="student_examination" Type="image" Nullable="false" />
+          <Property Name="level_id" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="student_address" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="student_state" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="student_fees" Type="numeric" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="class_id" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Kindergarten Mangement System.dbo.Students_Guadians' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Students_Guadians">
+          <Key>
+            <PropertyRef Name="student_id" />
+            <PropertyRef Name="guadian_id" />
+          </Key>
+          <Property Name="student_id" Type="int" Nullable="false" />
+          <Property Name="guadian_id" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Kindergarten Mangement System.dbo.Students_Semester_works_MM' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Students_Semester_works_MM">
+          <Key>
+            <PropertyRef Name="student_id" />
+            <PropertyRef Name="semester_work_id" />
+          </Key>
+          <Property Name="student_id" Type="int" Nullable="false" />
+          <Property Name="semester_work_id" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Kindergarten Mangement System.dbo.Students_Subjects' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Students_Subjects">
+          <Key>
+            <PropertyRef Name="student_id" />
+            <PropertyRef Name="subject_id" />
+          </Key>
+          <Property Name="student_id" Type="int" Nullable="false" />
+          <Property Name="subject_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subjects">
+          <Key>
+            <PropertyRef Name="subject_id" />
+          </Key>
+          <Property Name="subject_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="subject_name" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="l_id" Type="int" Nullable="false" />
+          <Property Name="employee_id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_bus_levels">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="Buses" Type="Self.Buses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="e_id" />
+            </Principal>
+            <Dependent Role="Buses">
+              <PropertyRef Name="employee_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_employee_gender">
+          <End Role="Genders" Type="Self.Genders" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genders">
+              <PropertyRef Name="g_id" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="gender_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_employee_jops">
+          <End Role="Jobs" Type="Self.Jobs" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jobs">
+              <PropertyRef Name="job_id" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="job_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_guadian_gender">
+          <End Role="Genders" Type="Self.Genders" Multiplicity="1" />
+          <End Role="Buses" Type="Self.Buses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genders">
+              <PropertyRef Name="g_id" />
+            </Principal>
+            <Dependent Role="Buses">
+              <PropertyRef Name="gender_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_semester_levels">
+          <End Role="Levels" Type="Self.Levels" Multiplicity="1" />
+          <End Role="Semester_works" Type="Self.Semester_works" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Levels">
+              <PropertyRef Name="l_id" />
+            </Principal>
+            <Dependent Role="Semester_works">
+              <PropertyRef Name="level_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_semester_student">
+          <End Role="Students" Type="Self.Students" Multiplicity="1" />
+          <End Role="Semester_works" Type="Self.Semester_works" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="student_id" />
+            </Principal>
+            <Dependent Role="Semester_works">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_semester_subjects">
+          <End Role="Subjects" Type="Self.Subjects" Multiplicity="1" />
+          <End Role="Semester_works" Type="Self.Semester_works" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subjects">
+              <PropertyRef Name="subject_id" />
+            </Principal>
+            <Dependent Role="Semester_works">
+              <PropertyRef Name="subject_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_store_employee">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="Stores" Type="Self.Stores" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="e_id" />
+            </Principal>
+            <Dependent Role="Stores">
+              <PropertyRef Name="employee_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_student_Classes_schedule">
+          <End Role="Classes_schedule" Type="Self.Classes_schedule" Multiplicity="1" />
+          <End Role="Students" Type="Self.Students" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classes_schedule">
+              <PropertyRef Name="c_id" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="gender_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_student_gender">
+          <End Role="Genders" Type="Self.Genders" Multiplicity="1" />
+          <End Role="Students" Type="Self.Students" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genders">
+              <PropertyRef Name="g_id" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="gender_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_student_guadian_1_MM">
+          <End Role="Students" Type="Self.Students" Multiplicity="1" />
+          <End Role="Students_Guadians" Type="Self.Students_Guadians" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="student_id" />
+            </Principal>
+            <Dependent Role="Students_Guadians">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_student_guadian_2_MM">
+          <End Role="Guadians" Type="Self.Guadians" Multiplicity="1" />
+          <End Role="Students_Guadians" Type="Self.Students_Guadians" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Guadians">
+              <PropertyRef Name="guadian_id" />
+            </Principal>
+            <Dependent Role="Students_Guadians">
+              <PropertyRef Name="guadian_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_student_level">
+          <End Role="Levels" Type="Self.Levels" Multiplicity="1" />
+          <End Role="Students" Type="Self.Students" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Levels">
+              <PropertyRef Name="l_id" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="gender_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_student_subject_1_MM">
+          <End Role="Students" Type="Self.Students" Multiplicity="1" />
+          <End Role="Students_Subjects" Type="Self.Students_Subjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="student_id" />
+            </Principal>
+            <Dependent Role="Students_Subjects">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_student_subject_2_MM">
+          <End Role="Subjects" Type="Self.Subjects" Multiplicity="1" />
+          <End Role="Students_Subjects" Type="Self.Students_Subjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subjects">
+              <PropertyRef Name="subject_id" />
+            </Principal>
+            <Dependent Role="Students_Subjects">
+              <PropertyRef Name="subject_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_student_SW1_MM">
+          <End Role="Students" Type="Self.Students" Multiplicity="1" />
+          <End Role="Students_Semester_works_MM" Type="Self.Students_Semester_works_MM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="student_id" />
+            </Principal>
+            <Dependent Role="Students_Semester_works_MM">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_student_SW2_MM">
+          <End Role="Semester_works" Type="Self.Semester_works" Multiplicity="1" />
+          <End Role="Students_Semester_works_MM" Type="Self.Students_Semester_works_MM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Semester_works">
+              <PropertyRef Name="sw_id" />
+            </Principal>
+            <Dependent Role="Students_Semester_works_MM">
+              <PropertyRef Name="semester_work_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_subject_employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="Subjects" Type="Self.Subjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="e_id" />
+            </Principal>
+            <Dependent Role="Subjects">
+              <PropertyRef Name="employee_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_subject_levels">
+          <End Role="Levels" Type="Self.Levels" Multiplicity="1" />
+          <End Role="Subjects" Type="Self.Subjects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Levels">
+              <PropertyRef Name="l_id" />
+            </Principal>
+            <Dependent Role="Subjects">
+              <PropertyRef Name="l_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="Bonds" EntityType="Self.Bonds" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Buses" EntityType="Self.Buses" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Classes_schedule" EntityType="Self.Classes_schedule" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Genders" EntityType="Self.Genders" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Guadians" EntityType="Self.Guadians" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Jobs" EntityType="Self.Jobs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Levels" EntityType="Self.Levels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Passwords" EntityType="Self.Passwords" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Semester_works" EntityType="Self.Semester_works" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Stores" EntityType="Self.Stores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subjects" EntityType="Self.Subjects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Students_Guadians" EntityType="Self.Students_Guadians" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Students_Guadians].[student_id] AS [student_id], 
+    [Students_Guadians].[guadian_id] AS [guadian_id]
+    FROM [dbo].[Students_Guadians] AS [Students_Guadians]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Students_Semester_works_MM" EntityType="Self.Students_Semester_works_MM" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Students_Semester_works_MM].[student_id] AS [student_id], 
+    [Students_Semester_works_MM].[semester_work_id] AS [semester_work_id]
+    FROM [dbo].[Students_Semester_works_MM] AS [Students_Semester_works_MM]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Students_Subjects" EntityType="Self.Students_Subjects" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Students_Subjects].[student_id] AS [student_id], 
+    [Students_Subjects].[subject_id] AS [subject_id]
+    FROM [dbo].[Students_Subjects] AS [Students_Subjects]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_bus_levels" Association="Self.FK_bus_levels">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Buses" EntitySet="Buses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_employee_gender" Association="Self.FK_employee_gender">
+            <End Role="Genders" EntitySet="Genders" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_employee_jops" Association="Self.FK_employee_jops">
+            <End Role="Jobs" EntitySet="Jobs" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_guadian_gender" Association="Self.FK_guadian_gender">
+            <End Role="Genders" EntitySet="Genders" />
+            <End Role="Buses" EntitySet="Buses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_semester_levels" Association="Self.FK_semester_levels">
+            <End Role="Levels" EntitySet="Levels" />
+            <End Role="Semester_works" EntitySet="Semester_works" />
+          </AssociationSet>
+          <AssociationSet Name="FK_semester_student" Association="Self.FK_semester_student">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="Semester_works" EntitySet="Semester_works" />
+          </AssociationSet>
+          <AssociationSet Name="FK_semester_subjects" Association="Self.FK_semester_subjects">
+            <End Role="Subjects" EntitySet="Subjects" />
+            <End Role="Semester_works" EntitySet="Semester_works" />
+          </AssociationSet>
+          <AssociationSet Name="FK_store_employee" Association="Self.FK_store_employee">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Stores" EntitySet="Stores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_student_Classes_schedule" Association="Self.FK_student_Classes_schedule">
+            <End Role="Classes_schedule" EntitySet="Classes_schedule" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_student_gender" Association="Self.FK_student_gender">
+            <End Role="Genders" EntitySet="Genders" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_student_guadian_1_MM" Association="Self.FK_student_guadian_1_MM">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="Students_Guadians" EntitySet="Students_Guadians" />
+          </AssociationSet>
+          <AssociationSet Name="FK_student_guadian_2_MM" Association="Self.FK_student_guadian_2_MM">
+            <End Role="Guadians" EntitySet="Guadians" />
+            <End Role="Students_Guadians" EntitySet="Students_Guadians" />
+          </AssociationSet>
+          <AssociationSet Name="FK_student_level" Association="Self.FK_student_level">
+            <End Role="Levels" EntitySet="Levels" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_student_subject_1_MM" Association="Self.FK_student_subject_1_MM">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="Students_Subjects" EntitySet="Students_Subjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_student_subject_2_MM" Association="Self.FK_student_subject_2_MM">
+            <End Role="Subjects" EntitySet="Subjects" />
+            <End Role="Students_Subjects" EntitySet="Students_Subjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_student_SW1_MM" Association="Self.FK_student_SW1_MM">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="Students_Semester_works_MM" EntitySet="Students_Semester_works_MM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_student_SW2_MM" Association="Self.FK_student_SW2_MM">
+            <End Role="Semester_works" EntitySet="Semester_works" />
+            <End Role="Students_Semester_works_MM" EntitySet="Students_Semester_works_MM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_subject_employees" Association="Self.FK_subject_employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Subjects" EntitySet="Subjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_subject_levels" Association="Self.FK_subject_levels">
+            <End Role="Levels" EntitySet="Levels" />
+            <End Role="Subjects" EntitySet="Subjects" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Bond">
+          <Key>
+            <PropertyRef Name="Student_id" />
+          </Key>
+          <Property Name="Student_id" Type="Int32" Nullable="false" />
+          <Property Name="Student_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bond_photo" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Bus">
+          <Key>
+            <PropertyRef Name="b_id" />
+          </Key>
+          <Property Name="b_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="b_type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="b_plat_number" Type="Int32" Nullable="false" />
+          <Property Name="b_ownership_paper" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="employee_id" Type="Int32" Nullable="false" />
+          <Property Name="gender_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_bus_levels" FromRole="Buses" ToRole="Employees" />
+          <NavigationProperty Name="Gender" Relationship="Self.FK_guadian_gender" FromRole="Buses" ToRole="Genders" />
+        </EntityType>
+        <EntityType Name="Classes_schedule">
+          <Key>
+            <PropertyRef Name="c_id" />
+          </Key>
+          <Property Name="c_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="c_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="c_number" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Students" Relationship="Self.FK_student_Classes_schedule" FromRole="Classes_schedule" ToRole="Students" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="e_id" />
+          </Key>
+          <Property Name="e_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="job_id" Type="Int32" Nullable="false" />
+          <Property Name="e_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="gender_id" Type="Int32" Nullable="false" />
+          <Property Name="e_age" Type="Int32" Nullable="false" />
+          <Property Name="e_personal_card" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="e_ceirtificate" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="e_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="e_phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="e_salary" Type="Decimal" Precision="9" Scale="2" Nullable="false" />
+          <Property Name="driving_license" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="Buses" Relationship="Self.FK_bus_levels" FromRole="Employees" ToRole="Buses" />
+          <NavigationProperty Name="Gender" Relationship="Self.FK_employee_gender" FromRole="Employees" ToRole="Genders" />
+          <NavigationProperty Name="Job" Relationship="Self.FK_employee_jops" FromRole="Employees" ToRole="Jobs" />
+          <NavigationProperty Name="Stores" Relationship="Self.FK_store_employee" FromRole="Employees" ToRole="Stores" />
+          <NavigationProperty Name="Subjects" Relationship="Self.FK_subject_employees" FromRole="Employees" ToRole="Subjects" />
+        </EntityType>
+        <EntityType Name="Gender">
+          <Key>
+            <PropertyRef Name="g_id" />
+          </Key>
+          <Property Name="g_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="g_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Buses" Relationship="Self.FK_guadian_gender" FromRole="Genders" ToRole="Buses" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_employee_gender" FromRole="Genders" ToRole="Employees" />
+          <NavigationProperty Name="Students" Relationship="Self.FK_student_gender" FromRole="Genders" ToRole="Students" />
+        </EntityType>
+        <EntityType Name="Guadian">
+          <Key>
+            <PropertyRef Name="guadian_id" />
+          </Key>
+          <Property Name="guadian_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="guadian_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="gender_id" Type="Int32" Nullable="false" />
+          <Property Name="age" Type="Int32" Nullable="false" />
+          <Property Name="personal_card" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="phone" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="guadian_address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Students" Relationship="Self.Students_Guadians" FromRole="Guadians" ToRole="Students" />
+        </EntityType>
+        <EntityType Name="Job">
+          <Key>
+            <PropertyRef Name="job_id" />
+          </Key>
+          <Property Name="job_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="job_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Employees" Relationship="Self.FK_employee_jops" FromRole="Jobs" ToRole="Employees" />
+        </EntityType>
+        <EntityType Name="Level">
+          <Key>
+            <PropertyRef Name="l_id" />
+          </Key>
+          <Property Name="l_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="l_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="l_number" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Semester_works" Relationship="Self.FK_semester_levels" FromRole="Levels" ToRole="Semester_works" />
+          <NavigationProperty Name="Students" Relationship="Self.FK_student_level" FromRole="Levels" ToRole="Students" />
+          <NavigationProperty Name="Subjects" Relationship="Self.FK_subject_levels" FromRole="Levels" ToRole="Subjects" />
+        </EntityType>
+        <EntityType Name="Password">
+          <Key>
+            <PropertyRef Name="P_id" />
+          </Key>
+          <Property Name="P_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="e_id" Type="Int32" Nullable="false" />
+          <Property Name="pass" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="forget" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Semester_works">
+          <Key>
+            <PropertyRef Name="sw_id" />
+          </Key>
+          <Property Name="sw_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="student_id" Type="Int32" Nullable="false" />
+          <Property Name="level_id" Type="Int32" Nullable="false" />
+          <Property Name="subject_id" Type="Int32" Nullable="false" />
+          <Property Name="test1" Type="Double" Nullable="false" />
+          <Property Name="test2" Type="Double" Nullable="false" />
+          <Property Name="final" Type="Double" Nullable="false" />
+          <Property Name="total" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Level" Relationship="Self.FK_semester_levels" FromRole="Semester_works" ToRole="Levels" />
+          <NavigationProperty Name="Student" Relationship="Self.FK_semester_student" FromRole="Semester_works" ToRole="Students" />
+          <NavigationProperty Name="Subject" Relationship="Self.FK_semester_subjects" FromRole="Semester_works" ToRole="Subjects" />
+          <NavigationProperty Name="Students" Relationship="Self.Students_Semester_works_MM" FromRole="Semester_works" ToRole="Students" />
+        </EntityType>
+        <EntityType Name="Store">
+          <Key>
+            <PropertyRef Name="store_id" />
+          </Key>
+          <Property Name="store_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="store_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="employee_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_store_employee" FromRole="Stores" ToRole="Employees" />
+        </EntityType>
+        <EntityType Name="Student">
+          <Key>
+            <PropertyRef Name="student_id" />
+          </Key>
+          <Property Name="student_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="student_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="gender_id" Type="Int32" Nullable="false" />
+          <Property Name="student_birth" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="student_photo" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="student_birth_certificaion" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="student_examination" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
+          <Property Name="level_id" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="student_address" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="student_state" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="student_fees" Type="Decimal" Precision="8" Scale="2" Nullable="false" />
+          <Property Name="class_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Classes_schedule" Relationship="Self.FK_student_Classes_schedule" FromRole="Students" ToRole="Classes_schedule" />
+          <NavigationProperty Name="Gender" Relationship="Self.FK_student_gender" FromRole="Students" ToRole="Genders" />
+          <NavigationProperty Name="Level" Relationship="Self.FK_student_level" FromRole="Students" ToRole="Levels" />
+          <NavigationProperty Name="Semester_works" Relationship="Self.FK_semester_student" FromRole="Students" ToRole="Semester_works" />
+          <NavigationProperty Name="Guadians" Relationship="Self.Students_Guadians" FromRole="Students" ToRole="Guadians" />
+          <NavigationProperty Name="Semester_works1" Relationship="Self.Students_Semester_works_MM" FromRole="Students" ToRole="Semester_works" />
+          <NavigationProperty Name="Subjects" Relationship="Self.Students_Subjects" FromRole="Students" ToRole="Subjects" />
+        </EntityType>
+        <EntityType Name="Subject">
+          <Key>
+            <PropertyRef Name="subject_id" />
+          </Key>
+          <Property Name="subject_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="subject_name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="l_id" Type="Int32" Nullable="false" />
+          <Property Name="employee_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="Self.FK_subject_employees" FromRole="Subjects" ToRole="Employees" />
+          <NavigationProperty Name="Level" Relationship="Self.FK_subject_levels" FromRole="Subjects" ToRole="Levels" />
+          <NavigationProperty Name="Semester_works" Relationship="Self.FK_semester_subjects" FromRole="Subjects" ToRole="Semester_works" />
+          <NavigationProperty Name="Students" Relationship="Self.Students_Subjects" FromRole="Subjects" ToRole="Students" />
+        </EntityType>
+        <Association Name="FK_bus_levels">
+          <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Buses" Type="Self.Bus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="e_id" />
+            </Principal>
+            <Dependent Role="Buses">
+              <PropertyRef Name="employee_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_guadian_gender">
+          <End Role="Genders" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Buses" Type="Self.Bus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genders">
+              <PropertyRef Name="g_id" />
+            </Principal>
+            <Dependent Role="Buses">
+              <PropertyRef Name="gender_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_student_Classes_schedule">
+          <End Role="Classes_schedule" Type="Self.Classes_schedule" Multiplicity="1" />
+          <End Role="Students" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Classes_schedule">
+              <PropertyRef Name="c_id" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="gender_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_employee_gender">
+          <End Role="Genders" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genders">
+              <PropertyRef Name="g_id" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="gender_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_employee_jops">
+          <End Role="Jobs" Type="Self.Job" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Jobs">
+              <PropertyRef Name="job_id" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="job_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_store_employee">
+          <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Stores" Type="Self.Store" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="e_id" />
+            </Principal>
+            <Dependent Role="Stores">
+              <PropertyRef Name="employee_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_subject_employees">
+          <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+          <End Role="Subjects" Type="Self.Subject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="e_id" />
+            </Principal>
+            <Dependent Role="Subjects">
+              <PropertyRef Name="employee_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_student_gender">
+          <End Role="Genders" Type="Self.Gender" Multiplicity="1" />
+          <End Role="Students" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genders">
+              <PropertyRef Name="g_id" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="gender_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_semester_levels">
+          <End Role="Levels" Type="Self.Level" Multiplicity="1" />
+          <End Role="Semester_works" Type="Self.Semester_works" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Levels">
+              <PropertyRef Name="l_id" />
+            </Principal>
+            <Dependent Role="Semester_works">
+              <PropertyRef Name="level_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_student_level">
+          <End Role="Levels" Type="Self.Level" Multiplicity="1" />
+          <End Role="Students" Type="Self.Student" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Levels">
+              <PropertyRef Name="l_id" />
+            </Principal>
+            <Dependent Role="Students">
+              <PropertyRef Name="gender_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_subject_levels">
+          <End Role="Levels" Type="Self.Level" Multiplicity="1" />
+          <End Role="Subjects" Type="Self.Subject" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Levels">
+              <PropertyRef Name="l_id" />
+            </Principal>
+            <Dependent Role="Subjects">
+              <PropertyRef Name="l_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_semester_student">
+          <End Role="Students" Type="Self.Student" Multiplicity="1" />
+          <End Role="Semester_works" Type="Self.Semester_works" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Students">
+              <PropertyRef Name="student_id" />
+            </Principal>
+            <Dependent Role="Semester_works">
+              <PropertyRef Name="student_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_semester_subjects">
+          <End Role="Subjects" Type="Self.Subject" Multiplicity="1" />
+          <End Role="Semester_works" Type="Self.Semester_works" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Subjects">
+              <PropertyRef Name="subject_id" />
+            </Principal>
+            <Dependent Role="Semester_works">
+              <PropertyRef Name="subject_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Students_Guadians">
+          <End Role="Students" Type="Self.Student" Multiplicity="*" />
+          <End Role="Guadians" Type="Self.Guadian" Multiplicity="*" />
+        </Association>
+        <Association Name="Students_Semester_works_MM">
+          <End Role="Students" Type="Self.Student" Multiplicity="*" />
+          <End Role="Semester_works" Type="Self.Semester_works" Multiplicity="*" />
+        </Association>
+        <Association Name="Students_Subjects">
+          <End Role="Students" Type="Self.Student" Multiplicity="*" />
+          <End Role="Subjects" Type="Self.Subject" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="Kindergarten_Mangement_SystemEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Bonds" EntityType="Self.Bond" />
+          <EntitySet Name="Buses" EntityType="Self.Bus" />
+          <EntitySet Name="Classes_schedule" EntityType="Self.Classes_schedule" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="Genders" EntityType="Self.Gender" />
+          <EntitySet Name="Guadians" EntityType="Self.Guadian" />
+          <EntitySet Name="Jobs" EntityType="Self.Job" />
+          <EntitySet Name="Levels" EntityType="Self.Level" />
+          <EntitySet Name="Passwords" EntityType="Self.Password" />
+          <EntitySet Name="Semester_works" EntityType="Self.Semester_works" />
+          <EntitySet Name="Stores" EntityType="Self.Store" />
+          <EntitySet Name="Students" EntityType="Self.Student" />
+          <EntitySet Name="Subjects" EntityType="Self.Subject" />
+          <AssociationSet Name="FK_bus_levels" Association="Self.FK_bus_levels">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Buses" EntitySet="Buses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_guadian_gender" Association="Self.FK_guadian_gender">
+            <End Role="Genders" EntitySet="Genders" />
+            <End Role="Buses" EntitySet="Buses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_student_Classes_schedule" Association="Self.FK_student_Classes_schedule">
+            <End Role="Classes_schedule" EntitySet="Classes_schedule" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_employee_gender" Association="Self.FK_employee_gender">
+            <End Role="Genders" EntitySet="Genders" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_employee_jops" Association="Self.FK_employee_jops">
+            <End Role="Jobs" EntitySet="Jobs" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_store_employee" Association="Self.FK_store_employee">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Stores" EntitySet="Stores" />
+          </AssociationSet>
+          <AssociationSet Name="FK_subject_employees" Association="Self.FK_subject_employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Subjects" EntitySet="Subjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_student_gender" Association="Self.FK_student_gender">
+            <End Role="Genders" EntitySet="Genders" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_semester_levels" Association="Self.FK_semester_levels">
+            <End Role="Levels" EntitySet="Levels" />
+            <End Role="Semester_works" EntitySet="Semester_works" />
+          </AssociationSet>
+          <AssociationSet Name="FK_student_level" Association="Self.FK_student_level">
+            <End Role="Levels" EntitySet="Levels" />
+            <End Role="Students" EntitySet="Students" />
+          </AssociationSet>
+          <AssociationSet Name="FK_subject_levels" Association="Self.FK_subject_levels">
+            <End Role="Levels" EntitySet="Levels" />
+            <End Role="Subjects" EntitySet="Subjects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_semester_student" Association="Self.FK_semester_student">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="Semester_works" EntitySet="Semester_works" />
+          </AssociationSet>
+          <AssociationSet Name="FK_semester_subjects" Association="Self.FK_semester_subjects">
+            <End Role="Subjects" EntitySet="Subjects" />
+            <End Role="Semester_works" EntitySet="Semester_works" />
+          </AssociationSet>
+          <AssociationSet Name="Students_Guadians" Association="Self.Students_Guadians">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="Guadians" EntitySet="Guadians" />
+          </AssociationSet>
+          <AssociationSet Name="Students_Semester_works_MM" Association="Self.Students_Semester_works_MM">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="Semester_works" EntitySet="Semester_works" />
+          </AssociationSet>
+          <AssociationSet Name="Students_Subjects" Association="Self.Students_Subjects">
+            <End Role="Students" EntitySet="Students" />
+            <End Role="Subjects" EntitySet="Subjects" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Kindergarten_Mangement_SystemEntities">
+          <EntitySetMapping Name="Bonds">
+            <EntityTypeMapping TypeName="Model.Bond">
+              <MappingFragment StoreEntitySet="Bonds">
+                <ScalarProperty Name="Student_id" ColumnName="Student_id" />
+                <ScalarProperty Name="Student_name" ColumnName="Student_name" />
+                <ScalarProperty Name="bond_photo" ColumnName="bond_photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Buses">
+            <EntityTypeMapping TypeName="Model.Bus">
+              <MappingFragment StoreEntitySet="Buses">
+                <ScalarProperty Name="b_id" ColumnName="b_id" />
+                <ScalarProperty Name="b_type" ColumnName="b_type" />
+                <ScalarProperty Name="b_plat_number" ColumnName="b_plat_number" />
+                <ScalarProperty Name="b_ownership_paper" ColumnName="b_ownership_paper" />
+                <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+                <ScalarProperty Name="gender_id" ColumnName="gender_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Classes_schedule">
+            <EntityTypeMapping TypeName="Model.Classes_schedule">
+              <MappingFragment StoreEntitySet="Classes_schedule">
+                <ScalarProperty Name="c_id" ColumnName="c_id" />
+                <ScalarProperty Name="c_name" ColumnName="c_name" />
+                <ScalarProperty Name="c_number" ColumnName="c_number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="Model.Employee">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="e_id" ColumnName="e_id" />
+                <ScalarProperty Name="job_id" ColumnName="job_id" />
+                <ScalarProperty Name="e_name" ColumnName="e_name" />
+                <ScalarProperty Name="gender_id" ColumnName="gender_id" />
+                <ScalarProperty Name="e_age" ColumnName="e_age" />
+                <ScalarProperty Name="e_personal_card" ColumnName="e_personal_card" />
+                <ScalarProperty Name="e_ceirtificate" ColumnName="e_ceirtificate" />
+                <ScalarProperty Name="e_address" ColumnName="e_address" />
+                <ScalarProperty Name="e_phone" ColumnName="e_phone" />
+                <ScalarProperty Name="e_salary" ColumnName="e_salary" />
+                <ScalarProperty Name="driving_license" ColumnName="driving_license" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Genders">
+            <EntityTypeMapping TypeName="Model.Gender">
+              <MappingFragment StoreEntitySet="Genders">
+                <ScalarProperty Name="g_id" ColumnName="g_id" />
+                <ScalarProperty Name="g_name" ColumnName="g_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Guadians">
+            <EntityTypeMapping TypeName="Model.Guadian">
+              <MappingFragment StoreEntitySet="Guadians">
+                <ScalarProperty Name="guadian_id" ColumnName="guadian_id" />
+                <ScalarProperty Name="guadian_name" ColumnName="guadian_name" />
+                <ScalarProperty Name="gender_id" ColumnName="gender_id" />
+                <ScalarProperty Name="age" ColumnName="age" />
+                <ScalarProperty Name="personal_card" ColumnName="personal_card" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="guadian_address" ColumnName="guadian_address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Jobs">
+            <EntityTypeMapping TypeName="Model.Job">
+              <MappingFragment StoreEntitySet="Jobs">
+                <ScalarProperty Name="job_id" ColumnName="job_id" />
+                <ScalarProperty Name="job_name" ColumnName="job_name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Levels">
+            <EntityTypeMapping TypeName="Model.Level">
+              <MappingFragment StoreEntitySet="Levels">
+                <ScalarProperty Name="l_id" ColumnName="l_id" />
+                <ScalarProperty Name="l_name" ColumnName="l_name" />
+                <ScalarProperty Name="l_number" ColumnName="l_number" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Passwords">
+            <EntityTypeMapping TypeName="Model.Password">
+              <MappingFragment StoreEntitySet="Passwords">
+                <ScalarProperty Name="P_id" ColumnName="P_id" />
+                <ScalarProperty Name="e_id" ColumnName="e_id" />
+                <ScalarProperty Name="pass" ColumnName="pass" />
+                <ScalarProperty Name="forget" ColumnName="forget" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Semester_works">
+            <EntityTypeMapping TypeName="Model.Semester_works">
+              <MappingFragment StoreEntitySet="Semester_works">
+                <ScalarProperty Name="sw_id" ColumnName="sw_id" />
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="level_id" ColumnName="level_id" />
+                <ScalarProperty Name="subject_id" ColumnName="subject_id" />
+                <ScalarProperty Name="test1" ColumnName="test1" />
+                <ScalarProperty Name="test2" ColumnName="test2" />
+                <ScalarProperty Name="final" ColumnName="final" />
+                <ScalarProperty Name="total" ColumnName="total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Stores">
+            <EntityTypeMapping TypeName="Model.Store">
+              <MappingFragment StoreEntitySet="Stores">
+                <ScalarProperty Name="store_id" ColumnName="store_id" />
+                <ScalarProperty Name="store_name" ColumnName="store_name" />
+                <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Students">
+            <EntityTypeMapping TypeName="Model.Student">
+              <MappingFragment StoreEntitySet="Students">
+                <ScalarProperty Name="student_id" ColumnName="student_id" />
+                <ScalarProperty Name="student_name" ColumnName="student_name" />
+                <ScalarProperty Name="gender_id" ColumnName="gender_id" />
+                <ScalarProperty Name="student_birth" ColumnName="student_birth" />
+                <ScalarProperty Name="student_photo" ColumnName="student_photo" />
+                <ScalarProperty Name="student_birth_certificaion" ColumnName="student_birth_certificaion" />
+                <ScalarProperty Name="student_examination" ColumnName="student_examination" />
+                <ScalarProperty Name="level_id" ColumnName="level_id" />
+                <ScalarProperty Name="student_address" ColumnName="student_address" />
+                <ScalarProperty Name="student_state" ColumnName="student_state" />
+                <ScalarProperty Name="student_fees" ColumnName="student_fees" />
+                <ScalarProperty Name="class_id" ColumnName="class_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Subjects">
+            <EntityTypeMapping TypeName="Model.Subject">
+              <MappingFragment StoreEntitySet="Subjects">
+                <ScalarProperty Name="subject_id" ColumnName="subject_id" />
+                <ScalarProperty Name="subject_name" ColumnName="subject_name" />
+                <ScalarProperty Name="l_id" ColumnName="l_id" />
+                <ScalarProperty Name="employee_id" ColumnName="employee_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Students_Guadians" TypeName="Model.Students_Guadians" StoreEntitySet="Students_Guadians">
+            <EndProperty Name="Students">
+              <ScalarProperty Name="student_id" ColumnName="student_id" />
+            </EndProperty>
+            <EndProperty Name="Guadians">
+              <ScalarProperty Name="guadian_id" ColumnName="guadian_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Students_Semester_works_MM" TypeName="Model.Students_Semester_works_MM" StoreEntitySet="Students_Semester_works_MM">
+            <EndProperty Name="Students">
+              <ScalarProperty Name="student_id" ColumnName="student_id" />
+            </EndProperty>
+            <EndProperty Name="Semester_works">
+              <ScalarProperty Name="sw_id" ColumnName="semester_work_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Students_Subjects" TypeName="Model.Students_Subjects" StoreEntitySet="Students_Subjects">
+            <EndProperty Name="Students">
+              <ScalarProperty Name="student_id" ColumnName="student_id" />
+            </EndProperty>
+            <EndProperty Name="Subjects">
+              <ScalarProperty Name="subject_id" ColumnName="subject_id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

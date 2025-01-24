@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6d11351e1355467cb808f03b61204dc5" Name="Diagram1" ZoomLevel="45">
+        <EntityTypeShape EntityType="Model.Bond" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Bus" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Classes_schedule" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Employee" Width="1.5" PointX="6" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Gender" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Guadian" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Job" Width="1.5" PointX="3.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Level" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Password" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Semester_works" Width="1.5" PointX="10.5" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Store" Width="1.5" PointX="8.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Student" Width="1.5" PointX="3.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Subject" Width="1.5" PointX="8.25" PointY="3.875" IsExpanded="true" />
+        <AssociationConnector Association="Model.FK_bus_levels" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_guadian_gender" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_student_Classes_schedule" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_employee_gender" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_employee_jops" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_store_employee" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_subject_employees" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_student_gender" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_semester_levels" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_student_level" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_subject_levels" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_semester_student" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.FK_semester_subjects" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.Students_Guadians" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.Students_Semester_works_MM" ManuallyRouted="false" />
+        <AssociationConnector Association="Model.Students_Subjects" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
